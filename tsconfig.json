@@ -1,0 +1,15 @@
+{
+  "extends": "./node_modules/react-redux-typescript-scripts/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "src/sw-*.js",
+    "src/idb.js"
+  ]
+}
