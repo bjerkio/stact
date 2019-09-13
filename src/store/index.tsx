@@ -1,5 +1,4 @@
-// import { RootAction, RootState, Services } from ''
-import { createStore, applyMiddleware, compose } from 'redux';
+import {createStore, applyMiddleware, compose } from "redux";
 import reducers from './reducers';
 import epics from './epics';
 import { createEpicMiddleware } from 'redux-observable';
@@ -19,3 +18,4 @@ export default function configureStore() {
 
   return store;
 }
+

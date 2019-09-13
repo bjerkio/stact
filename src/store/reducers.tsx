@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import posts from '../modules/posts/store/Posts';
+import {reducerFunction} from '../modules/posts/store/ImmerReducer';
 
 export default combineReducers({
-  posts
+  reducerFunction
 });

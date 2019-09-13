@@ -1,5 +1,5 @@
-import * as posts from '../modules/posts/store/PostsActions';
+import * as actions from '../modules/posts/store/Actions';
 
 export default {
-  posts
+  actions
 }
