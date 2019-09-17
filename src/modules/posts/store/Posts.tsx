@@ -1,12 +1,11 @@
 /// <reference path="../../../store/types.d.ts" />
-import { RootState } from 'MyTypes';
 import { getType } from 'typesafe-actions';
 import { createReducer } from 'typesafe-actions';
 import { fetchPostsFulfilled } from './PostsActions';
 import { combineReducers } from 'redux';
 
 
-const initialState: RootState = {
+const initialState: any = {
   posts: {
     items: [],
   },
