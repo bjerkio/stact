@@ -7,7 +7,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint src -c .eslintrc --ext js,jsx,ts,tsx",
+    "lint": "eslint src -c .eslintrc.json --ext js,jsx,ts,tsx",
     "generate": "graphql-codegen --config codegen.yml",
     "test": "jest",
     "test:watch": "jest --watch",
