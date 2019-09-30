@@ -1,21 +1,24 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import App from '../App';
-import withStore from '../../../../jest/withStore';
+import withStore from '../HoC/withStore';
+
+const AppWithStore = withStore()(App);
 
 describe('App', () => {
   test('Renders', () => {
-    render(withStore()(App));
+    render(<AppWithStore />);
   });
 
   test('Should not have basic accessibility issues', async () => {
-    const { container } = render(withStore()(App));
+    const { container } = render(<AppWithStore />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   test('Something works', async () => {
-    const { getByText } = render(withStore()(App));
+    const { getByText } = render(<AppWithStore />);
     const testText = getByText('Hello there');
     expect(testText).toBeInTheDocument();
     expect(testText).toBeVisible();
