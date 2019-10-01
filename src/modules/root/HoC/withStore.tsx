@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import React, { ComponentType, FC } from 'react';
 import { Provider } from 'react-redux';
 import defaultStore from '../../../store';
 
@@ -8,7 +8,7 @@ import defaultStore from '../../../store';
  */
 const withStore = (store = defaultStore) => (
   Component: ComponentType,
-) => () => (
+): FC => (): JSX.Element => (
   <Provider store={store()}>
     <Component />
   </Provider>

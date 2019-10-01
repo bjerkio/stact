@@ -1,15 +1,15 @@
 // import { RootAction, RootState, Services } from ''
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, Store } from 'redux';
+import { createEpicMiddleware } from 'redux-observable';
 import reducers from './reducers';
 import epics from './epics';
-import { createEpicMiddleware } from 'redux-observable';
 
 const epicMiddleware = createEpicMiddleware();
 
-// @ts-ignore
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
 
-export default function configureStore() {
+export default function configureStore(): Store {
   const store = createStore(
     reducers,
     composeEnhancers(applyMiddleware(epicMiddleware)),
