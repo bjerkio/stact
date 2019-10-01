@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import PostList from '../posts/components/PostList';
 
-
-export const App = () => (
+const App: FC = () => (
   <div>
     <p>Hello there</p>
     <PostList />
   </div>
-)
+);
 
 export default App;

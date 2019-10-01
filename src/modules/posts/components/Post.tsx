@@ -1,12 +1,11 @@
-import React from 'react';
-import { Post } from '../../../generated/graphql';
+import React, { FC } from 'react';
+import { Post as PostProps } from '../store/Reducer';
 
-export default ({ title, content, createdAt }: Post) => (
+const Post: FC<PostProps> = ({ title, body }: PostProps) => (
   <article>
     <h1>{title}</h1>
-    <b>Created at {createdAt}</b>
-    <p>
-      {content}
-    </p>
+    <p>{body}</p>
   </article>
 );
+
+export default Post;

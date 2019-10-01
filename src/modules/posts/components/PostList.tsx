@@ -1,20 +1,22 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import actions from '../store/Reducer';
 import Post from './Post';
-import { PostCollection } from '../../../generated/graphql';
 
-type Props = { posts: PostCollection };
+const PostList: React.FC = () => {
+  const posts = useSelector((state: any) => state.posts, shallowEqual);
+  const dispatch = useDispatch();
 
-const PostList: React.FC<Props> = ({ posts }) => (
-  <>
-     {posts.items &&
-      posts.items.map(post => post && <Post key={post.id} {...post} />)}
-  </>
-)
+  useEffect(() => {
+    dispatch(actions.fetchPosts());
+  }, [dispatch]);
 
-export default connect(
-  (state: { posts: { posts: PostCollection } }) => ({
-    posts: state.posts.posts,
-  }),
-  {},
-)(PostList);
+  return (
+    <>
+      {posts.items &&
+        posts.items.map((post: any) => <Post key={post.id} {...post} />)}
+    </>
+  );
+};
+
+export default PostList;

@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './modules/root/App';
 import * as serviceWorker from './serviceWorker';
-import store from './store';
-import { BrowserRouter as Router } from "react-router-dom";
+import withStore from './modules/root/HoC/withStore';
+
+const AppWithStore = withStore()(App);
 
 ReactDOM.render(
   <Router>
-    <Provider store={store()}>
-     <App />
-  </Provider>
+    <AppWithStore />
   </Router>,
   document.getElementById('root'),
 );
