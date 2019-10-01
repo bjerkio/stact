@@ -1,4 +1,3 @@
-// import { RootAction, RootState, Services } from ''
 import { createStore, applyMiddleware, compose, Store } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import reducers from './reducers';
@@ -15,7 +14,7 @@ export default function configureStore(): Store {
     composeEnhancers(applyMiddleware(epicMiddleware)),
   );
 
-  epicMiddleware.run(epics);
+  epicMiddleware.run(epics as any);
 
   return store;
 }
