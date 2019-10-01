@@ -1,12 +1,12 @@
-import React from 'react';
-import { Post } from '../../../generated/graphql';
+import React, { FC } from 'react';
+import { Post as PostProps } from '../../../generated/graphql';
 
-export default ({ title, content, createdAt }: Post) => (
+const Post: FC<PostProps> = ({ title, content, createdAt }: PostProps) => (
   <article>
     <h1>{title}</h1>
-    <b>Created at {createdAt}</b>
-    <p>
-      {content}
-    </p>
+    <b>{`Created at ${createdAt}`}</b>
+    <p>{content}</p>
   </article>
 );
+
+export default Post;
