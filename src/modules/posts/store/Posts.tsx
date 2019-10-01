@@ -1,10 +1,9 @@
-/// <reference path="../../../store/types.d.ts" />
-import { getType } from 'typesafe-actions';
-import { createReducer } from 'typesafe-actions';
-import { fetchPostsFulfilled } from './PostsActions';
 import { combineReducers } from 'redux';
+import { createReducer, getType } from 'typesafe-actions';
+import { fetchPostsFulfilled } from './PostsActions';
+import '../../../store/types.d';
 
-
+// eslint-disable-next-line
 const initialState: any = {
   posts: {
     items: [],
@@ -19,6 +18,3 @@ const posts = createReducer(initialState.posts.items).handleAction(
 export default combineReducers({
   posts,
 });
-// export default (state = initialState, action: ActionType) => {
-//   return state;
-// };
