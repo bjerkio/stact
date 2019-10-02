@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import actions from '../store/Reducer';
+import actions, { Post as PostType } from '../store/Reducer';
 import Post from './Post';
+import { RootState } from '../../../store/reducers';
 
 const PostList: React.FC = () => {
-  const posts = useSelector((state: any) => state.posts, shallowEqual);
+  const posts = useSelector((state: RootState) => state.posts, shallowEqual);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const PostList: React.FC = () => {
   return (
     <section>
       {posts.items &&
-        posts.items.map((post: any) => <Post key={post.id} {...post} />)}
+        posts.items.map((post: PostType) => <Post key={post.id} {...post} />)}
     </section>
   );
 };
