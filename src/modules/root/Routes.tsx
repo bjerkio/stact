@@ -4,7 +4,7 @@ import PostRoutes from '../posts/Routes';
 
 const Routes: React.FC = () => (
   <Switch>
-    <Route exact path="/">
+    <Route path="/">
       <PostRoutes />
     </Route>
   </Switch>

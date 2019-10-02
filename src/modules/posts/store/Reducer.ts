@@ -21,10 +21,19 @@ const initialState: PostsState = {
 
 export class PostsReducer extends ImmerReducer<PostsState> {
   // eslint-disable-next-line
-  fetchPosts(): void {}
+  fetchPostsRequest(): void {}
 
   fetchPostsFulfilled(payload: Post[]): void {
     this.draftState.items = payload;
+  }
+
+  // eslint-disable-next-line
+  fetchPostRequest(_postId: number): void {}
+
+  fetchPostFulfilled(payload: Post): void {
+    let postExists = this.draftState.items.find(post => post.id === payload.id);
+    if (postExists) postExists = payload;
+    else this.draftState.items.push(payload);
   }
 }
 
