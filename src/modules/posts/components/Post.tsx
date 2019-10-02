@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Post as PostProps } from '../store/Reducer';
 
 const Post: FC<PostProps> = ({ title, body, id }: PostProps) => (
-  <article>
+  <article data-testid="post">
     <h1>
       <Link to={`/post/${id}`}>{title}</Link>
     </h1>
