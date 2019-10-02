@@ -1,10 +1,6 @@
 import React, { FC } from 'react';
-import PostRoutes from '../posts/Routes';
+import Routes from './Routes';
 
-const App: FC = () => (
-  <>
-    <PostRoutes />
-  </>
-);
+const App: FC = () => <Routes />;
 
 export default App;
