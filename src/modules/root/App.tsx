@@ -1,11 +1,6 @@
 import React, { FC } from 'react';
-import PostList from '../posts/components/PostList';
+import Routes from './Routes';
 
-const App: FC = () => (
-  <div>
-    <p>Hello there</p>
-    <PostList />
-  </div>
-);
+const App: FC = () => <Routes />;
 
 export default App;
