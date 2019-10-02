@@ -12,10 +12,10 @@ const PostList: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <section>
       {posts.items &&
         posts.items.map((post: any) => <Post key={post.id} {...post} />)}
-    </>
+    </section>
   );
 };
 

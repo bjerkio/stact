@@ -1,11 +1,10 @@
 import React, { FC } from 'react';
-import PostList from '../posts/components/PostList';
+import PostRoutes from '../posts/Routes';
 
 const App: FC = () => (
-  <div>
-    <p>Hello there</p>
-    <PostList />
-  </div>
+  <>
+    <PostRoutes />
+  </>
 );
 
 export default App;
