@@ -1,4 +1,4 @@
 import { combineEpics } from 'redux-observable';
-import { fetchPostsEpic } from '../modules/posts/store/Epics';
+import * as PostsEpics from '../modules/posts/store/Epics';
 
-export default combineEpics(fetchPostsEpic);
+export default combineEpics(...Object.values(PostsEpics));

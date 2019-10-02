@@ -1,29 +1,37 @@
-import React from 'react';
-import { useParams, Redirect, useLocation } from 'react-router-dom';
-import { useSelector, shallowEqual } from 'react-redux';
+import React, { useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Post from './Post';
 import { RootState } from '../../../store/reducers';
-import { Post as PostType } from '../store/Reducer';
+import actions, { Post as PostType } from '../store/Reducer';
 
 const PostDetails: React.FC = () => {
   const { postId } = useParams();
   const posts = useSelector((state: RootState) => state.posts, shallowEqual);
-  const location = useLocation();
-  const postDetails =
-    posts &&
-    posts.items &&
-    posts.items.find((post: PostType) => post.id === Number(postId));
+  const dispatch = useDispatch();
+  const postDetails = useMemo(
+    () =>
+      posts &&
+      posts.items &&
+      posts.items.find((post: PostType) => post.id === Number(postId)),
+    [posts, postId],
+  );
 
-  // TODO: Will not work if the post list has not been fetched and it's a direct link. Requires more logic.
-  if (!postDetails)
-    return (
-      <Redirect
-        to={{
-          pathname: '/404',
-          state: { from: location },
-        }}
-      />
-    );
+  if (!postId) throw new Error('postId missing');
+  if (!postDetails) {
+    dispatch(actions.fetchPostRequest(Number(postId)));
+    return <div>loading...</div>;
+  }
+
+  // TODO: some kind of error state
+  // return (
+  //   <Redirect
+  //     to={{
+  //       pathname: '/404',
+  //       state: { from: location },
+  //     }}
+  //   />
+  // );
 
   return <Post {...postDetails} />;
 };
