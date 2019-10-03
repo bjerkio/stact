@@ -12,9 +12,10 @@ const User: React.FC<UserProps> = ({
   phone,
   username,
   website,
+  ...rest
 }: UserProps) => {
   return (
-    <div id={`userId-${id}`}>
+    <div data-testid="user" {...rest}>
       <p>{username}</p>
       <p>{website}</p>
       <Address {...address} />
