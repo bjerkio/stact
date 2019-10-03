@@ -1,11 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PostRoutes from '../posts/Routes';
+import UsersRoutes from '../users/Routes';
+import NotFound from './components/NotFound';
 
 const Routes: React.FC = () => (
   <Switch>
-    <Route path="/">
-      <PostRoutes />
+    <Route path="/posts">
+      <PostRoutes baseLocation="/posts" />
+    </Route>
+    <Route path="/users">
+      <UsersRoutes baseLocation="/users" />
+    </Route>
+    <Route exact path="/404">
+      <NotFound />
     </Route>
   </Switch>
 );

@@ -5,7 +5,7 @@ import { Post as PostProps } from '../store/Reducer';
 const Post: FC<PostProps> = ({ title, body, id }: PostProps) => (
   <article data-testid="post">
     <h1>
-      <Link to={`/post/${id}`}>{title}</Link>
+      <Link to={`/posts/${id}`}>{title}</Link>
     </h1>
     <p>{body}</p>
   </article>

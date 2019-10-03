@@ -1,19 +1,18 @@
 import React from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
-import PostList from './components/PostList';
-import PostDetails from './components/PostDetails';
+import UserList from './components/UserList';
+import UserDetails from './components/UserDetails';
 import RouteProps from '../root/interfaces/RouteProps';
 
-const PostsRoutes: React.FC<RouteProps> = ({ baseLocation }: RouteProps) => {
+const UsersRoutes: React.FC<RouteProps> = ({ baseLocation }: RouteProps) => {
   const location = useLocation();
-
   return (
     <Switch>
       <Route exact path={baseLocation}>
-        <PostList />
+        <UserList />
       </Route>
-      <Route exact path={`${baseLocation}/:postId`}>
-        <PostDetails />
+      <Route exact path={`${baseLocation}/:userId`}>
+        <UserDetails />
       </Route>
       <Route>
         <Redirect
@@ -27,4 +26,4 @@ const PostsRoutes: React.FC<RouteProps> = ({ baseLocation }: RouteProps) => {
   );
 };
 
-export default PostsRoutes;
+export default UsersRoutes;
