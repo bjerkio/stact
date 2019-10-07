@@ -18,20 +18,11 @@ const UserDetails: React.FC = () => {
   );
 
   if (!userId) throw new Error('userId missing');
+  if (users.errors.fetchUserError) return <div>Error</div>
   if (!userDetails) {
     dispatch(actions.fetchUserRequest(Number(userId)));
     return <div>loading...</div>;
   }
-
-  // TODO: some kind of error state
-  // return (
-  //   <Redirect
-  //     to={{
-  //       pathname: '/404',
-  //       state: { from: location },
-  //     }}
-  //   />
-  // );
 
   return <User {...userDetails} />;
 };
