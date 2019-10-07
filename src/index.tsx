@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from './modules/root/App';
+import App from './root/App';
 import * as serviceWorker from './serviceWorker';
-import withStore from './modules/root/HoC/withStore';
+import withStore from './root/HoC/withStore';
 
 const AppWithStore = withStore()(App);
 

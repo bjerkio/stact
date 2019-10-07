@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import actions from '../store/Reducer';
 import Post from './Post';
-import { RootState } from '../../../store/reducers';
+import { RootState } from '../../../root/store';
 
 const PostList: React.FC = () => {
   const posts = useSelector((state: RootState) => state.posts, shallowEqual);

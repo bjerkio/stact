@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { shallowEqual, useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store/reducers';
+import { RootState } from '../../../root/store/reducers';
 import actions, { User as UserType } from '../store/Reducer';
 import User from './User';
 

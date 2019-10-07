@@ -1,6 +1,6 @@
 import React, { ComponentType, FC } from 'react';
 import { Provider } from 'react-redux';
-import defaultStore from '../../../store';
+import defaultStore from '../store';
 
 /**
  * Wraps a component in a Redux provider with a store

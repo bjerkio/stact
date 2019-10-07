@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Post from './Post';
-import { RootState } from '../../../store/reducers';
+import { RootState } from '../../../root/store/reducers';
 import actions, { Post as PostType } from '../store/Reducer';
 
 const PostDetails: React.FC = () => {

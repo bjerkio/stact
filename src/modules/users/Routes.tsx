@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import UserList from './components/UserList';
 import UserDetails from './components/UserDetails';
-import RouteProps from '../root/interfaces/RouteProps';
+import RouteProps from '../../root/interfaces/RouteProps';
 
 const UsersRoutes: React.FC<RouteProps> = ({ baseLocation }: RouteProps) => {
   const location = useLocation();
@@ -26,4 +26,4 @@ const UsersRoutes: React.FC<RouteProps> = ({ baseLocation }: RouteProps) => {
   );
 };
 
-export default UsersRoutes;
+export default UsersRoutes

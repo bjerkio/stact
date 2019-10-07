@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
+import RouteProps from '../../root/interfaces/RouteProps';
 import PostList from './components/PostList';
 import PostDetails from './components/PostDetails';
-import RouteProps from '../root/interfaces/RouteProps';
 
 const PostsRoutes: React.FC<RouteProps> = ({ baseLocation }: RouteProps) => {
   const location = useLocation();
@@ -27,4 +27,4 @@ const PostsRoutes: React.FC<RouteProps> = ({ baseLocation }: RouteProps) => {
   );
 };
 
-export default PostsRoutes;
+export default PostsRoutes

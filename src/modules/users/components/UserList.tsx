@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { RootState } from '../../../store/reducers';
+import { RootState } from '../../../root/store/reducers';
 import User from './User';
 import actions from '../store/Reducer';
 
