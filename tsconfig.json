@@ -4,5 +4,5 @@
     "jsx": "react"
   },
   "include": ["src", "globals.d.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "src/sw-*.js", "src/idb.js"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

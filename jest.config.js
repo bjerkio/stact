@@ -10,4 +10,14 @@ module.exports = {
     'jest-axe/extend-expect',
   ],
   browser: true,
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/__fixtures__/*', '!src/*.*'],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
+  coverageReporters: ['text'],
 };

@@ -8,7 +8,7 @@ const Company: React.FC<CompanyProps> = ({
 }: CompanyProps) => {
   return (
     <section>
-      <p>{name}</p>
+      <h3>{name}</h3>
       <p>{bs}</p>
       <p>{catchPhrase}</p>
     </section>

@@ -11,7 +11,7 @@ const Post: FC<PostProps> = ({
 }: PostProps) => (
   <article data-testid="post" {...rest}>
     <h1>
-      <Link to={`/posts/${id}`}>{title}</Link>
+      <Link to={`/posts/${id}`} data-testid="post-title">{title}</Link>
     </h1>
     <p>{body}</p>
   </article>
