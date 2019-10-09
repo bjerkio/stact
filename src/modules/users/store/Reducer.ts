@@ -48,7 +48,6 @@ export class UsersReducer extends ImmerReducer<UsersState> {
   // eslint-disable-next-line
   fetchUsersRequest(): void {}
 
-  // eslint-disable-next-line
   fetchUsersError(payload: string): void {
     this.draftState.errors.fetchUsersError = payload;
    }
@@ -61,7 +60,6 @@ export class UsersReducer extends ImmerReducer<UsersState> {
   // eslint-disable-next-line
   fetchUserRequest(_userId: number): void {}
 
-  // eslint-disable-next-line
   fetchUserError(payload: string): void { 
     this.draftState.errors.fetchUserError = payload
   }

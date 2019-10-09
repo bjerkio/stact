@@ -27,7 +27,6 @@ export class PostsReducer extends ImmerReducer<PostsState> {
   // eslint-disable-next-line
   fetchPostsRequest(): void {}
 
-  // eslint-disable-next-line
   fetchPostsError(payload: string): void {
     this.draftState.errors.fetchPostsError = payload;
    }
@@ -40,7 +39,6 @@ export class PostsReducer extends ImmerReducer<PostsState> {
   // eslint-disable-next-line
   fetchPostRequest(_payload: number): void {}
 
-  // eslint-disable-next-line
   fetchPostError(payload: string): void { 
     this.draftState.errors.fetchPostError = payload;
   }
