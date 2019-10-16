@@ -34,27 +34,41 @@ export interface User {
 
 export interface UsersState {
   items: User[];
+  errors: {
+    [key: string]: string
+  }
 }
 
 const initialState: UsersState = {
   items: [],
+  errors: {}
 };
 
 export class UsersReducer extends ImmerReducer<UsersState> {
   // eslint-disable-next-line
   fetchUsersRequest(): void {}
 
+  fetchUsersError(payload: string): void {
+    this.draftState.errors.fetchUsersError = payload;
+   }
+
   fetchUsersFulfilled(payload: User[]): void {
     this.draftState.items = payload;
+    delete this.draftState.errors.fetchUsersError
   }
 
   // eslint-disable-next-line
   fetchUserRequest(_userId: number): void {}
 
+  fetchUserError(payload: string): void { 
+    this.draftState.errors.fetchUserError = payload
+  }
+
   fetchUserFulfilled(payload: User): void {
     let userExists = this.draftState.items.find(user => user.id === payload.id);
     if (userExists) userExists = payload;
     else this.draftState.items.push(payload);
+    delete this.draftState.errors.fetchUserError
   }
 }
 

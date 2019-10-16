@@ -11,6 +11,8 @@ const UserList: React.FC = () => {
   useEffect(() => {
     dispatch(actions.fetchUsersRequest());
   }, [dispatch]);
+
+  if (users.errors.fetchUsersError) return <div>Error</div>
   return (
     <section>
       {users.items &&

@@ -12,6 +12,7 @@ const PostList: React.FC = () => {
     dispatch(actions.fetchPostsRequest());
   }, [dispatch]);
 
+  if (posts.errors.fetchPostsRequest) return <div>Error</div>
   return (
     <section>
       {posts.items && posts.items.map(post => <Post key={post.id} {...post} />)}

@@ -18,20 +18,11 @@ const PostDetails: React.FC = () => {
   );
 
   if (!postId) throw new Error('postId missing');
+  if (posts.errors.fetchPostError) return <div>Error</div>
   if (!postDetails) {
     dispatch(actions.fetchPostRequest(Number(postId)));
     return <div>loading...</div>;
   }
-
-  // TODO: some kind of error state
-  // return (
-  //   <Redirect
-  //     to={{
-  //       pathname: '/404',
-  //       state: { from: location },
-  //     }}
-  //   />
-  // );
 
   return <Post {...postDetails} />;
 };
