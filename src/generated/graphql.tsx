@@ -7,7 +7,7 @@ export type Scalars = {
   Int: number;
   Float: number;
   /** The `Upload` scalar type represents a file upload. */
-  Upload: any;
+  Upload: any; // eslint-disable-line
 };
 
 // eslint-disable-next-line
