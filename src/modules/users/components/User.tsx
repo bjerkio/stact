@@ -16,13 +16,13 @@ const User: React.FC<UserProps> = ({
 }: UserProps) => {
   return (
     <div data-testid="user" {...rest}>
-      <p>{username}</p>
+      <h2>{username}</h2>
       <p>{website}</p>
-      <Address {...address} />
-      <Company {...company} />
       <p>{email}</p>
       <p>{name}</p>
       <p>{phone}</p>
+      <Address {...address} />
+      <Company {...company} />
     </div>
   );
 };
