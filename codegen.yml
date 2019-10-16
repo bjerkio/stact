@@ -1,5 +1,5 @@
 overwrite: true
-schema: src/**/*.graphql
+schema: https://countries.trevorblades.com/
 generates:
   src/generated/graphql.tsx:
     plugins:

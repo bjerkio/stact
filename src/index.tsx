@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './modules/root/App';
 import * as serviceWorker from './serviceWorker';
 import withStore from './modules/root/HoC/withStore';
+import client from './apollo';
 
 const AppWithStore = withStore()(App);
 
 ReactDOM.render(
-  <Router>
-    <AppWithStore />
-  </Router>,
+  <ApolloProvider client={client}>
+    <Router>
+      <AppWithStore />
+    </Router>
+  </ApolloProvider>,
   document.getElementById('root'),
 );
 
