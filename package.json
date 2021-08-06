@@ -1,9 +1,10 @@
 {
   "name": "bjerk-react",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "<cobraz@cobraz.no>",
+  "repository": "github:bjerkio/stact",
   "license": "MIT",
+  "author": "<cobraz@cobraz.no>",
+  "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -12,6 +13,18 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "coverage": "jest --coverage"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",
@@ -64,17 +77,5 @@
     "react-redux-typescript-scripts": "^1.6.2",
     "ts-jest": "^24.0.2",
     "typescript": "3.2.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
